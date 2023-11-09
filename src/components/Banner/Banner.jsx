@@ -9,7 +9,7 @@ const Banner = () => {
             latest phones, add them in your favorite list and checkout there
             price. All the best!!!
           </p>
-          <button className="bg-[#9333ea] text-white rounded-lg p-4">
+          <button className="text-white rounded-lg p-4 bg-gradient-to-tr from-pink-600 to-pink-400">
             Get Started
           </button>
         </div>

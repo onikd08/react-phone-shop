@@ -32,7 +32,7 @@ const PhoneDetails = () => {
             </p>
           </div>
           <div className="flex justify-center">
-            <Button btnText={"Add to Favorite"}></Button>
+            <Button btnText={"Add to Favorites"}></Button>
           </div>
         </div>
       </PhoneCard>

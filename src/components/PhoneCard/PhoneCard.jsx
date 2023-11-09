@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import Button from "../Button/Button";
 
-const PhoneCard = ({ phone }) => {
+const PhoneCard = ({ phone, children }) => {
   const { id, image, phone_name, brand_name, price, rating } = phone;
 
   return (
@@ -16,21 +17,20 @@ const PhoneCard = ({ phone }) => {
           <p>Price: {price}$</p>
           <p>Rating: {rating}</p>
         </div>
+        <div>{children}</div>
       </div>
-      <div className="flex justify-center">
-        <Link
-          to={`/phone/${id}`}
-          className="bg-[#9333ea] text-white rounded-lg text-center py-3 w-full m-4"
-        >
-          See Details
+      {!children && (
+        <Link to={`/phone/${id}`} className="flex justify-center">
+          <Button btnText={"See Details"}></Button>
         </Link>
-      </div>
+      )}
     </div>
   );
 };
 
 PhoneCard.propTypes = {
   phone: PropTypes.object.isRequired,
+  children: PropTypes.element,
 };
 
 export default PhoneCard;

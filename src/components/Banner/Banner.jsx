@@ -1,6 +1,6 @@
 const Banner = () => {
   return (
-    <div className="hero min-h-[calc(100vh/2)] bg-base-200">
+    <div className="hero min-h-[calc(100vh/2)] bg-base-200 mt-10">
       <div className="hero-content text-center">
         <div className="max-w-md">
           <h1 className="text-5xl font-bold">Hello there!!</h1>

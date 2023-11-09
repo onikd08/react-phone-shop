@@ -2,24 +2,25 @@ import PropTypes from "prop-types";
 import { useContext } from "react";
 import FavoriteContext from "../../contexts/FavoriteContext";
 import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 
 const Button = ({ btnText, targetPhone, phoneId }) => {
   const { favPhones, setFavPhones } = useContext(FavoriteContext);
   const navigate = useNavigate();
 
   const handleClick = () => {
-    // switch (btnText) {
-    //   case "Add to Favorites":
-    //     setFavPhones([...favPhones, targetPhone]);
-    //     break;
-    //   case "See Details":
-    //     navigate(`/phone/${targetPhone.id}`);
-    //     break;
-    //   default:
-    //     break;
-    // }
     if (targetPhone) {
-      setFavPhones([...favPhones, targetPhone]);
+      const found = favPhones.find((phone) => phone.id === targetPhone.id);
+      if (!found) {
+        setFavPhones([...favPhones, targetPhone]);
+        swal("Great!!!", "Item is added in your favorite list!", "success");
+      } else {
+        swal(
+          "Oops!",
+          "This item is already exists in your favorite list!",
+          "error"
+        );
+      }
     } else if (phoneId) {
       navigate(`/phone/${phoneId}`);
     }

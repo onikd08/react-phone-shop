@@ -58,7 +58,9 @@ const NavBar = () => {
               {navBarLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">React Phone Shop</a>
+          <NavLink to="/" className="btn btn-ghost normal-case text-xl">
+            React Phone Shop
+          </NavLink>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navBarLinks}</ul>

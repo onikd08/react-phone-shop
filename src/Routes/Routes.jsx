@@ -3,6 +3,7 @@ import MainLayout from "../Layouts/MainLayout";
 import Home from "../Pages/Home/Home";
 import PhoneDetails from "../components/PhoneDetails/PhoneDetails";
 import Login from "../Pages/Login/Login";
+import Favorites from "../Pages/Favorites/Favorites";
 
 const Routes = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const Routes = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/favorites",
+        element: <Favorites></Favorites>,
       },
       {
         path: "/phone/:id",

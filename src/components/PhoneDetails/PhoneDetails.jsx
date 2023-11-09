@@ -8,6 +8,7 @@ const PhoneDetails = () => {
   const phones = useLoaderData() || [];
   const targetPhone = phones.find((phone) => phone.id === id) || {};
   const { ram, battery_capacity, storage, chipset } = targetPhone;
+
   return (
     <div className="min-h-[calc(100vh-76px)] max-w-lg mx-auto flex items-center">
       <PhoneCard phone={targetPhone}>
@@ -31,8 +32,11 @@ const PhoneDetails = () => {
               {chipset}
             </p>
           </div>
-          <div className="flex justify-center">
-            <Button btnText={"Add to Favorites"}></Button>
+          <div className="flex">
+            <Button
+              targetPhone={targetPhone}
+              btnText={"Add to Favorites"}
+            ></Button>
           </div>
         </div>
       </PhoneCard>

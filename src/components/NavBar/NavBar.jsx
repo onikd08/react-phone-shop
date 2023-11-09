@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import FavoriteContext from "../../contexts/FavoriteContext";
 
 const NavBar = () => {
+  const { favPhones } = useContext(FavoriteContext);
   const setLinkStatus = ({ isActive, isPending }) => {
     if (isPending) {
       return "pending";
@@ -20,6 +23,13 @@ const NavBar = () => {
       <li>
         <NavLink to="/favorites" className={setLinkStatus}>
           Favorites
+          {favPhones.length ? (
+            <div className="lg:relative right-3 bottom-3 badge  border-0 text-red-600 bg-transparent">
+              {favPhones.length}
+            </div>
+          ) : (
+            ""
+          )}
         </NavLink>
       </li>
       <li>

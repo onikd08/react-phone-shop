@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 
 const PhoneCard = ({ phone, children }) => {
@@ -20,9 +19,9 @@ const PhoneCard = ({ phone, children }) => {
         <div>{children}</div>
       </div>
       {!children && (
-        <Link to={`/phone/${id}`} className="flex justify-center">
-          <Button btnText={"See Details"}></Button>
-        </Link>
+        <div className="flex justify-center">
+          <Button phoneId={id} btnText={"See Details"}></Button>
+        </div>
       )}
     </div>
   );

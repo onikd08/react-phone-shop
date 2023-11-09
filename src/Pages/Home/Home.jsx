@@ -1,12 +1,13 @@
 import Banner from "../../components/Banner/Banner";
-import useGetPhones from "../../hooks/useGetPhones";
+import Phones from "../../components/Phones/Phones";
 
 const Home = () => {
-  const phones = useGetPhones();
   return (
     <div>
       <Banner></Banner>
-      {phones.length}
+      <div className="max-w-screen-xl mx-auto">
+        <Phones></Phones>
+      </div>
     </div>
   );
 };
